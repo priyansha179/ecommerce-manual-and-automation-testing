@@ -1,17 +1,14 @@
 # E-Commerce QA Portfolio
 
-A hands-on Quality Assurance portfolio demonstrating manual testing, defect reporting, 
-and test automation against a public e-commerce demo application.
+A hands-on Quality Assurance portfolio demonstrating manual testing, defect reporting, UI automation, and API testing against a public e-commerce demo application.
 
-**Author:** Priyansha
-**Tools:** Python, Pytest, Playwright, Git/GitHub
+**Tools:** Python, Pytest, Playwright, Requests, Git/GitHub
 
 ---
 
 ##  Project Overview
 
-This repository showcases a complete QA testing lifecycle, from manual exploratory 
-testing to automated regression testing. 
+This repository showcases a complete QA testing lifecycle, from manual exploratory testing to automated regression testing. 
 
 **Application under test:** [SauceDemo](https://www.saucedemo.com) (A public demo e-commerce site).
 
@@ -28,7 +25,9 @@ testing to automated regression testing.
 |--------|-------------|
 | `bug-reports/` | Defect reports |
 | `test-cases.md` | Manual test cases |
-| `test_login.py` | Playwright automated test script (Python) |
+| `test_login.py` | Playwright UI automated test (Login) |
+| `test_cart_bug.py` | Playwright UI automated test (Cart Bug) |
+| `test_api.py` | API automated test (GET request validation) |
 
 ---
 
@@ -39,12 +38,14 @@ testing to automated regression testing.
 
 ---
 
-## 🤖 Test Automation
+##  Test Automation
 
-Automated using **Python**, **Pytest**, and **Microsoft Playwright**.
+Automated using **Python**, **Pytest**, **Microsoft Playwright** (UI), and **Requests** (API).
 
 ### What is automated:
-1. **Login flow** (`test_login.py`): Validates successful login and navigation.
+1. **UI Login flow** (`test_login.py`): Validates successful login and navigation.
+2. **UI Cart Bug** (`test_cart_bug.py`): Attempts to catch a known sorting bug on the site.
+3. **API Testing** (`test_api.py`): Sends a GET request to a public API and validates the JSON response and status code.
 
 ### How to run the tests locally:
 ```bash
@@ -52,5 +53,8 @@ Automated using **Python**, **Pytest**, and **Microsoft Playwright**.
 pip install -r requirements.txt
 playwright install
 
-# Run tests
+# Run all tests
 pytest
+
+# Run just the API test with print output
+pytest test_api.py -s
