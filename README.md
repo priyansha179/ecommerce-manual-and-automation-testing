@@ -2,7 +2,6 @@
 
 A hands-on Quality Assurance portfolio demonstrating manual testing, defect reporting, UI automation, and API testing against a public e-commerce demo application.
 
-**Author:** Priyansha
 **Tools:** Python, Pytest, Playwright, Requests, Git/GitHub
 
 ---
