@@ -1,60 +1,43 @@
-# E-Commerce QA Portfolio
+# E-Commerce QA Automation Portfolio
 
-A hands-on Quality Assurance portfolio demonstrating manual testing, defect reporting, UI automation, and API testing against a public e-commerce demo application.
+Welcome to my QA portfolio! This project demonstrates my skills in manual testing, bug reporting, UI automation, and API testing using an e-commerce demo application (SauceDemo).
 
-**Tools:** Python, Pytest, Playwright, Requests, Git/GitHub
+
+**Tech Stack:** Python, Pytest, Playwright, Requests, Git/GitHub
 
 ---
 
 ##  Project Overview
 
-This repository showcases a complete QA testing lifecycle, from manual exploratory testing to automated regression testing. 
+The goal of this project was to practice the complete QA testing lifecycle. I started by manually testing the website to find bugs, and then I built a professional automation framework to verify those features automatically.
 
-**Application under test:** [SauceDemo](https://www.saucedemo.com) (A public demo e-commerce site).
-
-**Core User Flows Tested:**
-- Login & Authentication (Valid, Invalid, Locked-out users)
-- Product Listing & Sorting
-- Shopping Cart Management
+**What is tested in this repo:**
+- **Login Flow:** Valid and invalid user logins.
+- **Cart Bug:** A specific bug where sorting items changes the cart count incorrectly.
+- **API Backend:** Verifying that the server returns the correct data.
 
 ---
 
-##  Repository Structure
+##  Project Structure
 
-| Folder/File | Description |
-|--------|-------------|
-| `bug-reports/` | Defect reports |
-| `test-cases.md` | Manual test cases |
-| `test_login.py` | Playwright UI automated test (Login) |
-| `test_cart_bug.py` | Playwright UI automated test (Cart Bug) |
-| `test_api.py` | API automated test (GET request validation) |
+Here is how the project is organized:
 
----
-
-##  Manual Testing
-
-- **Test Cases:** [`test-cases.md`](test-cases.md) (Executed login flows, validated error messages).
-- **Bug Reports:** [`bug-reports/`](bug-reports/) (Documented a cart state bug).
+| Folder/File | What it does |
+|-------------|--------------|
+| `manual-testing/` | Contains manual test cases (`test-cases.md`) and a bug report (`bug-reports/`). |
+| `pages/` | **Page Object Model:** Contains the locators and actions for the website (`login_page.py`, `cart_page.py`). |
+| `test_login.py` | UI test: Validates a successful login. |
+| `test_cart_bug.py` | UI test: Automates a bug where the cart count changes when sorting items. *(Note: This test intentionally fails because it catches a real bug on the site!)* |
+| `test_login_data_driven.py` | Data-driven test: Tests 4 different login error scenarios at once. |
+| `test_api.py` | API test: Validates a backend server response. |
+| `INTERVIEW_PREP.md` | My personal notes explaining the architecture and technical decisions. |
 
 ---
 
-##  Test Automation
+##  How to Run the Tests
 
-Automated using **Python**, **Pytest**, **Microsoft Playwright** (UI), and **Requests** (API).
+If you want to run these tests on your own computer, follow these simple steps:
 
-### What is automated:
-1. **UI Login flow** (`test_login.py`): Validates successful login and navigation.
-2. **UI Cart Bug** (`test_cart_bug.py`): Attempts to catch a known sorting bug on the site.
-3. **API Testing** (`test_api.py`): Sends a GET request to a public API and validates the JSON response and status code.
-
-### How to run the tests locally:
-```bash
-# Install dependencies
-pip install -r requirements.txt
-playwright install
-
-# Run all tests
-pytest
-
-# Run just the API test with print output
-pytest test_api.py -s
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/priyansha179/ecommerce-manual-and-automation-testing.git
