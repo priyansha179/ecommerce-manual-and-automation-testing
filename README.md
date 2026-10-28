@@ -30,9 +30,7 @@ Here is how the project is organized:
 | `test_cart_bug.py` | UI test: Automates a bug where the cart count changes when sorting items. *(Note: This test intentionally fails because it catches a real bug on the site!)* |
 | `test_login_data_driven.py` | Data-driven test: Tests 4 different login error scenarios at once. |
 | `test_api.py` | API test: Validates a backend server response. |
-| `INTERVIEW_PREP.md` | My personal notes explaining the architecture and technical decisions. |
 
----
 
 ##  How to Run the Tests
 
