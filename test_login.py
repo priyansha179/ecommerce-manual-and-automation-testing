@@ -1,15 +1,13 @@
 from playwright.sync_api import Page, expect
+from pages.login_page import LoginPage
 
 def test_tc001_valid_login(page: Page):
-    # 1. Go to the website
-    page.goto("https://www.saucedemo.com/")
+    # Create an instance of the page object
+    login_page = LoginPage(page)
+    
+    # Use the page object methods
+    login_page.navigate()
+    login_page.login("standard_user", "secret_sauce")
 
-    # 2. Enter username and password
-    page.locator('[data-test="username"]').fill("standard_user")
-    page.locator('[data-test="password"]').fill("secret_sauce")
-
-    # 3. Click Login
-    page.locator('[data-test="login-button"]').click()
-
-    # 4. Verify we are on the Products page
-    expect(page.locator(".title")).to_have_text("Products")
+    # Verify
+    expect(login_page.page_title).to_have_text("Products")
